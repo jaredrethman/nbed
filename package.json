@@ -1,0 +1,13 @@
+{
+  "name": "nbed",
+  "version": "0.0.1",
+  "description": "NBED",
+  "main": "server.js",
+  "author": "Jared Rethman <jaredrethman@gmail.com>",
+  "dependencies": {
+    "cheerio": "latest",
+    "express": "latest",
+    "pug": "^2.0.0-beta6",
+    "request": "latest"
+  }
+}

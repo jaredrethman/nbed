@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= opengraph.ogTitle
+    style
+        include assets/css/nbed.css
+  body
+    - var wrap_class= theme
+    - var isError= error.status
+    if !isError
+        div( class=wrap_class ? 'light' : 'dark' )
+        img( src = standard.icon )
+        h1#nbed-title= opengraph.ogTitle
+        a( href = opengraph.ogUrl ? opengraph.ogUrl : standard.baseUrl, target="_blank", id = 'nbed-link' )
+            p= opengraph.ogDescription
+            if opengraph.ogModified
+                span= opengraph.ogModified
+            else if standard.modified
+                span= standard.modified
+            span= callToAction
+            img( src = opengraph.ogImage.src )
+
+    else
+        - var errorMsg= error.message
+        - var statusCode= error.statusCode
+        h1= statusCode
+        p!= errorMsg
+    script
+        include assets/js/footer.js
